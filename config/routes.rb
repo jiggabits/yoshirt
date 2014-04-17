@@ -1,4 +1,6 @@
 Yoshirt::Application.routes.draw do
+  resources :orders
+
   get "welcome" => "pages#welcome"
 
   root "pages#orders"
