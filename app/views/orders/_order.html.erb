@@ -1,20 +1,27 @@
-<h2>
-  <strong>Transaction:</strong>
-  <%= order.transaction_id %>
-</h2>
-
 <table class="table">
 	<thead>
-		<tr><%= order.name %></tr>
+		<tr>
+			<th>Transaction: <%= order.transaction_id %></th>
+			<th>Created: <%= order.created_at.to_formatted_s(:long) %></th>
+		</tr>
 	</thead>
+
+	<tbody>
+		<tr>
+			<td>
+				<%= order.name %><BR>
+				<%= order.email_address %><BR>
+				<%= order.address_1 %><BR>
+				<% if notice.present? %>
+					<%= order.address_2 %><BR>
+				<% end %>
+				<%= order.city %> <%= order.state %>, <%= order.zip %>
+			</td>
+
+			<td align="right">
+				<strong>Shipped:</strong>   <%= order.shipped %>
+			</td>
+		</tr>
+	</tbody>
+
 </table>
-
-<p>
-  <strong>Created on:</strong>
-  <%= order.created_at.to_formatted_s(:long) %>
-</p>
-
-<p>
-  <strong>Shipped:</strong>
-  <%= order.shipped %>
-</p>
