@@ -1,0 +1,20 @@
+<h2>
+  <strong>Transaction:</strong>
+  <%= order.transaction_id %>
+</h2>
+
+<table class="table">
+	<thead>
+		<tr><%= order.name %></tr>
+	</thead>
+</table>
+
+<p>
+  <strong>Created on:</strong>
+  <%= order.created_at.to_formatted_s(:long) %>
+</p>
+
+<p>
+  <strong>Shipped:</strong>
+  <%= order.shipped %>
+</p>

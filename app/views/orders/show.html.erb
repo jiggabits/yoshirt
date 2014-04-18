@@ -1,19 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+	<p class="alert alert-info"><%= notice %></p>
+<% end %>
 
-<p>
-  <strong>Transaction:</strong>
-  <%= @order.transaction_id %>
-</p>
-
-<p>
-  <strong>Created at:</strong>
-  <%= @order.created_at %>
-</p>
-
-<p>
-  <strong>Shipped:</strong>
-  <%= @order.shipped %>
-</p>
+<%= render 'order', order: @order %>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

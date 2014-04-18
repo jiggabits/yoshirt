@@ -1,9 +1,9 @@
 Yoshirt::Application.routes.draw do
   resources :orders
 
-  get "welcome" => "pages#welcome"
+  get "orders" => "pages#orders"
 
-  root "pages#orders"
+  root "pages#welcome"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

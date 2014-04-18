@@ -1,3 +1,8 @@
 <h1>Welcome, bitch.</h1>
 
-<p>This is the landing page for when you login, bitch.  Made using ROR.</p>
+<p>You have all these unshipped orders.  Get to it!</p>
+
+
+<% @orders.each do |order| %>
+	<%= render 'orders/order', order: order %>
+<% end %>
