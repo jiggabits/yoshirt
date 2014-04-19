@@ -16,11 +16,23 @@
   <div class="page-header">
 
     <ul class="nav nav-pills pull-right">
-    <li class="active"><%= link_to 'Home', '/' %></li>
+      <li class="active"><%= link_to 'Home', '/' %></li>
       <li><%= link_to 'Manage Orders', orders_url %></li>
     </ul>
 
     <h1> <%= link_to 'YoShirt!', '/' %> <small>// orders n shit</small></h1> 
+
+
+    <!-- 'devise' shit -->
+    <p class="navbar-text pull-right">
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
 
   </div>
 
@@ -28,6 +40,15 @@
   <div class="row">
 
     <div class="col-md-6 col-md-offset-3">
+
+      <!-- 'devise' gem stuff -->
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
       <%= yield %>
     </div>
 

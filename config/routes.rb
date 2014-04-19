@@ -1,4 +1,5 @@
 Yoshirt::Application.routes.draw do
+  devise_for :users
   resources :orders
 
   get "orders" => "pages#orders"
