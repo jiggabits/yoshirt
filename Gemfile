@@ -46,3 +46,6 @@ end
 
 # Use devise for login/signup
 gem 'devise'
+
+# Use paperclip for shit
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
