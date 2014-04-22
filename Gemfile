@@ -46,3 +46,6 @@ end
 
 # Use devise for login/signup
 gem 'devise'
+
+# Using paperclip for image uploading
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"

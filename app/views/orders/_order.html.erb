@@ -22,6 +22,19 @@
 				<strong>Shipped:</strong>   <%= order.shipped %>
 			</td>
 		</tr>
+
+		<tr>
+			<td>
+				<small>T-Shirt Img:</small><BR>
+				
+				<%= form_for(Image.new) do |f| %>
+					
+				<% end %>
+
+				<%= order.images.count %> 9 hearts
+			</td>
+		</tr>
+
 	</tbody>
 
 </table>

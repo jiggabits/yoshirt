@@ -2,6 +2,9 @@ Yoshirt::Application.routes.draw do
   devise_for :users
   resources :orders
 
+  resources :images, only: :create
+
+
   get "orders" => "pages#orders"
 
   root "pages#welcome"
