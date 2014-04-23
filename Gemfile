@@ -4,7 +4,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -47,5 +53,12 @@ end
 # Use devise for login/signup
 gem 'devise'
 
-# Using paperclip for image uploading
+# Use paperclip for shit
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+# Use foreman for accessing local variables for mailer
+# Recommended on this Tumblr:
+# http://stevechristie.tumblr.com/post/35158776548/how-to-set-up-local-environmental-variables
+group :development, :test do
+ gem 'foreman'
+end

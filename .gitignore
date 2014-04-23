@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+
+# Ignore the .env because this shows passwords
+# Plus it's only meant to be used locally
+.env
+Procfile
