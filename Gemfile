@@ -55,3 +55,10 @@ gem 'devise'
 
 # Use paperclip for shit
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+# Use foreman for accessing local variables for mailer
+# Recommended on this Tumblr:
+# http://stevechristie.tumblr.com/post/35158776548/how-to-set-up-local-environmental-variables
+group :development, :test do
+ gem 'foreman'
+end
